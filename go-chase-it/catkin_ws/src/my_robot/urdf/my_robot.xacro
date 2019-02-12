@@ -33,7 +33,14 @@
     <child link="camera"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
-  </joint>  
+  </joint>
+
+ <joint type="fixed" name="hokuyo_joint">
+    <origin xyz="0.15 0.1 0" rpy="0 0 0"/>
+    <child link="hokuyo"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+  </joint>    
 
   <link name='chassis'>
     <pose>0 0 0.1 0 0 0</pose>
@@ -60,6 +67,9 @@
       <geometry>
         <box size=".4 .2 .1"/>
       </geometry>
+      <material>
+        <color rgba="0.2 0.9 0.2 1" />
+      </material>
     </visual>
 
 
@@ -118,6 +128,9 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
+      <material>
+        <color rgba="0.2 0.2 0.9 1" />
+      </material>
     </visual>
 
   </link>
@@ -147,8 +160,10 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
+      <material>
+        <color rgba="0.2 0.2 0.9 1" />
+      </material>      
     </visual>
-
   </link>
 
   <!-- Camera -->
@@ -171,7 +186,33 @@
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
+      <material>
+        <color rgba="0.8 0.2 0.8 1" />
+      </material>      
     </visual>    
+  </link>
+
+  <!-- Lidar -->
+  <link name="hokuyo">
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+
+    <collision name='hokuyo_collision'>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <visual name='hokuyo_visual'>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>        
   </link>
 
 </robot>
