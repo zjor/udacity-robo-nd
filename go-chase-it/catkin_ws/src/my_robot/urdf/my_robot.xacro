@@ -2,6 +2,22 @@
 
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <material name="green">
+    <color rgba="0.2 0.9 0.2 1" />
+  </material>
+
+  <material name="blue">
+    <color rgba="0.2 0.2 0.9 1" />
+  </material>
+
+  <material name="red">
+    <color rgba="0.9 0.2 0.2 1" />
+  </material>
+
+  <material name="yellow">
+    <color rgba="0.8 0.8 0.2 1" />
+  </material>
+
   <link name="robot_footprint"></link>
 
   <joint name="robot_footprint_joint" type="fixed">
@@ -67,9 +83,7 @@
       <geometry>
         <box size=".4 .2 .1"/>
       </geometry>
-      <material>
-        <color rgba="0.2 0.9 0.2 1" />
-      </material>
+      <material name="green"/>      
     </visual>
 
 
@@ -85,6 +99,7 @@
       <geometry>
         <sphere radius="0.05"/>
       </geometry>
+      <material name="green"/>
     </visual>
 
     <collision name='front_caster_collision'>
@@ -99,6 +114,7 @@
       <geometry>
         <sphere radius="0.05"/>
       </geometry>
+      <material name="green"/>
     </visual>
 
   </link>
@@ -128,9 +144,7 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <material>
-        <color rgba="0.2 0.2 0.9 1" />
-      </material>
+      <material name="blue"/>        
     </visual>
 
   </link>
@@ -160,9 +174,7 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <material>
-        <color rgba="0.2 0.2 0.9 1" />
-      </material>      
+      <material name="blue"/>   
     </visual>
   </link>
 
@@ -186,9 +198,7 @@
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
-      <material>
-        <color rgba="0.8 0.2 0.8 1" />
-      </material>      
+      <material name="red"/>     
     </visual>    
   </link>
 
