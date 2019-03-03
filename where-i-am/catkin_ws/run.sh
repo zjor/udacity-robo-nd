@@ -1,4 +1,4 @@
 #!/bin/bash
 
 source devel/setup.sh
-roslaunch -v my_robot world.launch
+roslaunch -v where_i_am world.launch

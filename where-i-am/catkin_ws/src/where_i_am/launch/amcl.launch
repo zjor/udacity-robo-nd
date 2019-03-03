@@ -6,7 +6,7 @@
 	<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
 	
 	<node name="amcl" pkg="amcl" type="amcl" output="screen">
-		<remap from="scan" to="where_i_am/laser/scan"/>
+		<!-- <remap from="scan" to="where_i_am/laser/scan"/> -->
 
 		<param name="odom_frame_id" value="odom"/>
 		<param name="odom_model_type" value="diff-corrected"/>
@@ -15,10 +15,17 @@
 
 		<param name="initial_pose_x" value="0"/>
     	<param name="initial_pose_y" value="0"/>
+
+    	<param name="min_particles" value="100"/>
+    	<param name="max_particles" value="3500"/>
+
+    	<param name="update_min_d" value="0.2"/>
+    	<param name="update_min_a" value="0.26"/>
+    	
 	</node>
 	
 	<node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
-		<remap from="scan" to="where_i_am/laser/scan"/>
+		<!-- <remap from="scan" to="where_i_am/laser/scan"/> -->
 
 		<param name="base_global_planner" value="navfn/NavfnROS" />
 		<param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
