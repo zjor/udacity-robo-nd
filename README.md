@@ -7,6 +7,6 @@
 
 - [Project 3: Where I am](where_i_am)
 
-![Where I Am](/where_i_am/screenshots/pic1.png?raw=true "Where I am")
+![Where I Am](where_i_am/screenshots/pic1.png?raw=true "Where I am")
 
 
