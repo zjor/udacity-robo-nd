@@ -7,6 +7,6 @@
 
 - [Project 3: Where I am](where_i_am)
 
-![Where I Am](/master/where_i_am/screenshots/pic1.png?raw=true "Where I am")
+![Where I Am](https://raw.githubusercontent.com/zjor/udacity-robo-nd/master/where-i-am/screenshots/pic1.png)
 
 
