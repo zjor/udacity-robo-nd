@@ -1,0 +1,3 @@
+TrajectoryPlannerROS:
+  meter_scoring: true
+  holonomic_robot: false
